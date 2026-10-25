@@ -94,14 +94,32 @@
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
     var m = Math.min(w, h);
-    if (w >= 900) {
-      engine.x = w * 0.72;
+    var contentEl = document.querySelector(".hero-content");
+    var contentRight = 0;
+    if (contentEl) {
+      var cRect = contentEl.getBoundingClientRect();
+      contentRight = cRect.right - rect.left;
+    }
+
+    if (w >= 1024) {
+      // Desktop: Keep engine safely in the right 45% of the screen
+      var minX = contentRight > 0 ? contentRight + 70 : w * 0.58;
+      engine.x = Math.max(minX + 90, w * 0.77);
       engine.y = h * 0.48;
-      engine.r = m * 0.175;
+      var availWidth = w - engine.x;
+      engine.r = Math.min(m * 0.17, availWidth * 0.75, 170);
+    } else if (w >= 768) {
+      // Tablet: Moderate size engine placed to the right of text
+      var minTabX = contentRight > 0 ? contentRight + 45 : w * 0.6;
+      engine.x = Math.max(minTabX + 70, w * 0.79);
+      engine.y = h * 0.44;
+      var availTabWidth = w - engine.x;
+      engine.r = Math.min(m * 0.14, availTabWidth * 0.72, 125);
     } else {
-      engine.x = w * 0.65;
-      engine.y = h * 0.32;
-      engine.r = Math.max(50, m * 0.2);
+      // Mobile (< 768px): Place engine in top-right quadrant well above text
+      engine.x = w * 0.75;
+      engine.y = Math.min(160, Math.max(90, h * 0.2));
+      engine.r = Math.min(60, w * 0.17, (w - engine.x) * 0.85);
     }
 
     initParticlesForMode(currentMode);
@@ -134,22 +152,25 @@
       else p.c = Math.max(0, p.c - 0.0035);
 
       if (p.c > 0) {
-        var f = p.c * 0.75 * (R * R) / (d * d);
+        var f = p.c * 0.85 * (R * R) / (d * d);
         ax += nx * f;
-        ay += ny * f + (ny >= 0 ? 1 : -1) * f * 0.45;
+        ay += ny * f + (ny >= 0 ? 1 : -1) * f * 0.5;
+      }
+
+      // Soft aerodynamic boundary collider with depth layering
+      var boundary = R * 1.08;
+      if (d < boundary) {
+        var overlap = (boundary - d) / boundary;
+        ax += nx * overlap * 2.2 + (-ny) * overlap * 1.2;
+        ay += ny * overlap * 2.2 + (nx) * overlap * 1.2;
+        p.vx *= 0.88;
+        p.vy *= 0.88;
       }
 
       p.vx += ax; p.vy += ay;
       var sp = Math.sqrt(p.vx * p.vx + p.vy * p.vy);
       if (sp > 6) { p.vx *= 6 / sp; p.vy *= 6 / sp; }
       p.x += p.vx; p.y += p.vy;
-
-      dx = p.x - engine.x; dy = p.y - engine.y;
-      d = Math.sqrt(dx * dx + dy * dy) || 1;
-      if (d < R * 1.04) {
-        p.x = engine.x + (dx / d) * R * 1.04;
-        p.y = engine.y + (dy / d) * R * 1.04;
-      }
 
       if (p.x > w + 30 || p.y < -40 || p.y > h + 40) {
         particles[i] = createParticle(false, "original");
@@ -580,37 +601,65 @@
      ========================================================================= */
   function stepParticleCloud() {
     t++;
-    var repX = mouse.active ? mouse.x : engine.x;
-    var repY = mouse.active ? mouse.y : engine.y;
-    var repRadius = mouse.active ? 160 : engine.r * 1.8;
+    var hasMouse = mouse.active;
+    var mouseRadius = 150;
+    var engineRadius = engine.r * 1.35;
 
     for (var i = 0; i < particles.length; i++) {
       var p = particles[i];
       p.px = p.x; p.py = p.y;
 
-      var baseVx = 1.0 + p.z * 1.8;
+      var baseVx = 1.0 + p.z * 1.6;
       var ax = (baseVx - p.vx) * 0.04;
-      var ay = (Math.sin(p.x * 0.008 + t * 0.02 + p.seed) * 0.5 - p.vy) * 0.04;
+      var ay = (Math.sin(p.x * 0.008 + t * 0.02 + p.seed) * 0.35 - p.vy) * 0.04;
 
-      var dx = p.x - repX, dy = p.y - repY;
-      var d = Math.sqrt(dx * dx + dy * dy) || 1;
+      // 1. Mouse electrostatic repulsion collider (when cursor / touch is active)
+      if (hasMouse) {
+        var dxM = p.x - mouse.x, dyM = p.y - mouse.y;
+        var dM = Math.sqrt(dxM * dxM + dyM * dyM) || 1;
+        if (dM < mouseRadius) {
+          p.c = Math.min(1, p.c + 0.16);
+          var forceM = Math.pow(1 - dM / mouseRadius, 1.8) * 3.6;
+          ax += (dxM / dM) * forceM;
+          ay += (dyM / dM) * forceM;
+        }
+      }
 
-      // Mouse or intake electrostatic repulsion bubble
-      if (d < repRadius) {
-        p.c = Math.min(1, p.c + 0.15);
-        var f = (1 - d / repRadius) * 3.5;
-        ax += (dx / d) * f;
-        ay += (dy / d) * f;
+      // 2. Engine intake electrostatic repulsion collider (always protects engine)
+      var dxE = p.x - engine.x, dyE = p.y - engine.y;
+      var dE = Math.sqrt(dxE * dxE + dyE * dyE) || 1;
+      if (dE < engineRadius * 1.8) {
+        p.c = Math.min(1, p.c + 0.12);
+        var forceE = Math.pow(1 - dE / (engineRadius * 1.8), 1.6) * 2.6;
+        ax += (dxE / dE) * forceE;
+        ay += (dyE / dE) * forceE + (dyE >= 0 ? 0.45 : -0.45) * forceE;
       } else {
-        p.c = Math.max(0, p.c - 0.008);
+        if (!hasMouse) p.c = Math.max(0, p.c - 0.006);
+      }
+
+      // 3. Smooth boundary damping: prevents clumping or collider penetration
+      if (dE < engineRadius) {
+        var overlapE = (engineRadius - dE) / engineRadius;
+        ax += (dxE / dE) * overlapE * 2.8;
+        ay += (dyE / dE) * overlapE * 2.8;
+        p.vx *= 0.88;
+        p.vy *= 0.88;
       }
 
       p.vx += ax;
       p.vy += ay;
+
+      // Speed clamp for fluid aerodynamic simulation
+      var speed = Math.sqrt(p.vx * p.vx + p.vy * p.vy);
+      if (speed > 7.0) {
+        p.vx = (p.vx / speed) * 7.0;
+        p.vy = (p.vy / speed) * 7.0;
+      }
+
       p.x += p.vx;
       p.y += p.vy;
 
-      if (p.x > w + 20 || p.y < -30 || p.y > h + 30) {
+      if (p.x > w + 25 || p.y < -35 || p.y > h + 35) {
         particles[i] = createParticle(false, "particle-cloud");
       }
     }
