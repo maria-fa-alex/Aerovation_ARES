@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="ARES logo">
+  <defs>
+    <linearGradient id="l-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFB028"/>
+      <stop offset="1" stop-color="#FF6A00"/>
+    </linearGradient>
+    <linearGradient id="l-ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#F5F7F9"/>
+      <stop offset=".45" stop-color="#9AA1AB"/>
+      <stop offset=".7" stop-color="#E6E9ED"/>
+      <stop offset="1" stop-color="#7D8590"/>
+    </linearGradient>
+    <radialGradient id="l-hub" cx=".38" cy=".32" r=".75">
+      <stop offset="0" stop-color="#626B77"/>
+      <stop offset="1" stop-color="#14171C"/>
+    </radialGradient>
+    <linearGradient id="l-blade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#262B33"/>
+      <stop offset="1" stop-color="#525B67"/>
+    </linearGradient>
+    <clipPath id="l-tile"><rect width="100" height="100" rx="22"/></clipPath>
+    <path id="l-b" d="M7 -1.5 C16 -5 27 -9.5 37.5 -8 L38 1 C27 -0.5 16 1.5 7 2.6 Z"/>
+  </defs>
+  <rect width="100" height="100" rx="22" fill="url(#l-bg)"/>
+  <g clip-path="url(#l-tile)">
+    <g transform="translate(66 28) scale(.92)">
+      <circle r="47" fill="#7a2e00" opacity=".22" transform="translate(-4 5)"/>
+      <circle r="45" fill="url(#l-ring)"/>
+      <circle r="39" fill="#0F1216"/>
+      <g fill="url(#l-blade)" stroke="#727B86" stroke-width=".45">
+        <use href="#l-b"/>
+        <use href="#l-b" transform="rotate(20)"/>
+        <use href="#l-b" transform="rotate(40)"/>
+        <use href="#l-b" transform="rotate(60)"/>
+        <use href="#l-b" transform="rotate(80)"/>
+        <use href="#l-b" transform="rotate(100)"/>
+        <use href="#l-b" transform="rotate(120)"/>
+        <use href="#l-b" transform="rotate(140)"/>
+        <use href="#l-b" transform="rotate(160)"/>
+        <use href="#l-b" transform="rotate(180)"/>
+        <use href="#l-b" transform="rotate(200)"/>
+        <use href="#l-b" transform="rotate(220)"/>
+        <use href="#l-b" transform="rotate(240)"/>
+        <use href="#l-b" transform="rotate(260)"/>
+        <use href="#l-b" transform="rotate(280)"/>
+        <use href="#l-b" transform="rotate(300)"/>
+        <use href="#l-b" transform="rotate(320)"/>
+        <use href="#l-b" transform="rotate(340)"/>
+      </g>
+      <circle r="9.5" fill="url(#l-hub)"/>
+      <path d="M-1 0 a1 1 0 0 1 2 0 a2.1 2.1 0 0 1 -4.2 0 a3.3 3.3 0 0 1 6.6 0" fill="none" stroke="#C9CED6" stroke-width=".9" stroke-linecap="round"/>
+    </g>
+  </g>
+  <text x="9" y="91" fill="#ffffff" font-family="Rajdhani, 'Arial Black', Arial, sans-serif" font-weight="700" font-size="23" letter-spacing="2.5">ARES</text>
+</svg>
