@@ -2,7 +2,7 @@
 
 > **Less contamination - more elevation.**
 
-The official website for **Aerovation** and our innovation **ARES** (Aerospace Residue Elimination Service), developed for the [CONRAD Challenge](https://conrad.spacecenter.org/) (Aviation & Aerospace category) by students at Oxford High School.
+The official website for **Aerovation** and our innovation **ARES** (Aerospace Residue Elimination Service), developed for the [CONRAD Challenge](https://conrad.spacecenter.org/) (Aviation & Aerospace category) by a team of sixth form students.
 
 Hosted directly via **GitHub Pages**.
 
@@ -12,12 +12,12 @@ Hosted directly via **GitHub Pages**.
 
 - `index.html` — Homepage with interactive canvas particle simulation, problem stats, workflow overview, and explore links.
 - `ares.html` — Product deep dive: the problem (0-20μm particles), existing alternatives, 4-step solution (Charge, Deflect, Collect, Monitor), competitive advantage, market segments, and key testing metrics.
-- `about.html` — Team background, Oxford High School sixth form intro, and individual member profile cards.
+- `about.html` — Team background, sixth form intro, and individual member profile cards.
 - `contact.html` — Inquiries form (pre-configured for Formspree) and contact details.
 - `404.html` — Branded not-found page.
 - `assets/css/styles.css` — Complete design system (theme variables, light/dark mode, typography, responsive grid).
 - `assets/js/main.js` — Navigation overlay, theme toggle with persistence, scroll animations, and form logic.
-- `assets/js/hero.js` — Canvas electrostatic particle deflection simulation.
+- `assets/js/hero.js` — Drifting dust background for the home page hero.
 - `assets/img/` — Brand vectors (`logo.svg`, `logo-mark.svg`, `favicon.svg`).
 
 ---

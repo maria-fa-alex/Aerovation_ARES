@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Aerovation | ARES: Less contamination - more elevation</title>
   <meta name="description"
-    content="Aerovation is a team of Oxford High School students building ARES, an inlet system that charges fine desert dust and steers it away from aircraft engines. Conrad Challenge, Aviation and Aerospace.">
+    content="Aerovation is a team of sixth form students building ARES, an inlet system that charges fine desert dust and steers it away from aircraft engines. Conrad Challenge, Aviation and Aerospace.">
   <meta name="theme-color" content="#f7f5f2" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0a0b0d" media="(prefers-color-scheme: dark)">
   <meta property="og:title" content="Aerovation | ARES">
@@ -20,7 +20,7 @@
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Rajdhani:wght@500;600;700&display=swap">
   <script>(function () { var d = document.documentElement; d.classList.add("js"); try { var t = localStorage.getItem("theme"); if (t) d.setAttribute("data-theme", t); } catch (e) { } })();</script>
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="assets/css/styles.css?v=5">
 </head>
 
 <body>
@@ -100,27 +100,17 @@
           </a>
           <a href="about.html" class="btn" id="hero-cta-team">Meet the team</a>
         </div>
-        <div class="hero-switcher" id="hero-switcher">
-          <span class="switcher-label">Preview animation options:</span>
-          <div class="switcher-buttons" role="tablist" aria-label="Hero animation switcher">
-            <button type="button" class="sw-btn is-active" data-hero-mode="original" role="tab"
-              aria-selected="true">Default: Fan</button>
-            <button type="button" class="sw-btn" data-hero-mode="cross-section" role="tab" aria-selected="false">1.
-              Cross-Section</button>
-            <button type="button" class="sw-btn" data-hero-mode="shield-toggle" role="tab" aria-selected="false">2.
-              Shield Toggle</button>
-            <button type="button" class="sw-btn" data-hero-mode="wireframe-3d" role="tab" aria-selected="false">3. 3D
-              Wireframe</button>
-            <button type="button" class="sw-btn" data-hero-mode="particle-cloud" role="tab" aria-selected="false">4.
-              Interactive Cloud</button>
-          </div>
-        </div>
       </div>
-      <span class="scroll-cue" aria-hidden="true">Scroll</span>
+      <a href="#problem" class="scroll-hint" aria-label="Scroll down">
+        <span class="scroll-hint-line" aria-hidden="true"></span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="m7 10 5 5 5-5" />
+        </svg>
+      </a>
     </section>
 
     <!-- ===== Problem ===== -->
-    <section class="section" aria-labelledby="problem-title">
+    <section class="section" id="problem" aria-labelledby="problem-title">
       <div class="container">
         <div class="section-head reveal">
           <p class="eyebrow">The problem</p>
@@ -236,7 +226,7 @@
             <div class="feature-body">
               <p class="eyebrow">About us</p>
               <h3>The team</h3>
-              <p>Five Oxford High School sixth formers whose different interests come together as Aerovation.</p>
+              <p>Five sixth formers whose different interests come together as Aerovation.</p>
               <span class="link-arrow">Meet us <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
                   stroke-width="2" aria-hidden="true">
                   <path d="M5 12h14M13 6l6 6-6 6" />
@@ -361,8 +351,8 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js" defer></script>
-  <script src="assets/js/hero.js" defer></script>
+  <script src="assets/js/main.js?v=5" defer></script>
+  <script src="assets/js/hero.js?v=5" defer></script>
 </body>
 
 </html>

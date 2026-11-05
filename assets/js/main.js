@@ -94,11 +94,13 @@
     });
   }
 
-  /* ---------- Header background on scroll ---------- */
+  /* ---------- Header background & scroll hint on scroll ---------- */
   var header = document.getElementById("site-header");
+  var scrollHint = document.querySelector(".scroll-hint");
   var ticking = false;
   function onScroll() {
     if (header) header.classList.toggle("is-scrolled", window.scrollY > 24);
+    if (scrollHint) scrollHint.classList.toggle("is-hidden", window.scrollY > 48);
     ticking = false;
   }
   window.addEventListener("scroll", function () {
@@ -121,6 +123,11 @@
   } else {
     revealEls.forEach(function (el) { el.classList.add("is-in"); });
   }
+
+  /* ---------- Remove any cached legacy hero controls ---------- */
+  document.querySelectorAll(".hero-switcher, .scroll-cue").forEach(function (el) {
+    el.remove();
+  });
 
   /* ---------- Placeholder links (e.g. Instagram) do nothing yet ---------- */
   document.addEventListener("click", function (e) {
