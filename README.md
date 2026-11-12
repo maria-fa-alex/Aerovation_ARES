@@ -1,6 +1,6 @@
 # Aerovation — ARES
 
-> **Less contamination - more elevation.**
+> **Less contamination — more elevation.**
 
 The official website for **Aerovation** and our innovation **ARES** (Aerospace Residue Elimination Service), developed for the [CONRAD Challenge](https://conrad.spacecenter.org/) (Aviation & Aerospace category) by a team of sixth form students.
 
@@ -10,13 +10,13 @@ Hosted directly via **GitHub Pages**.
 
 ## Website Structure
 
-- `index.html` — Homepage with interactive canvas particle simulation, problem stats, workflow overview, and explore links.
-- `ares.html` — Product deep dive: the problem (0-20μm particles), existing alternatives, 4-step solution (Charge, Deflect, Collect, Monitor), competitive advantage, market segments, and key testing metrics.
-- `about.html` — Team background, sixth form intro, and individual member profile cards.
-- `contact.html` — Inquiries form (pre-configured for Formspree) and contact details.
+- `index.html` — Homepage with interactive drifting-dust canvas, core-dust budget stats (`0–20μm`, `~77% at idle`, `−69% core dust`), 4-step workflow overview (`Charge`, `Capture`, `Stow & wash`, `Monitor`), and explore links.
+- `ares.html` — Product deep dive: the physics of fine dust ingestion ($\tau_p \propto d^2$, `9.8g` taxi/idle vs `3.1g` take-off/landing), why existing alternatives and naive full-inlet electrostatics fail (`93 m/s` required vs `0.14 m/s` achievable), the 36-channel concentric micro-gap core-inlet cassette (`5 mm` pitch, `s = 2.5 mm`, `2.5 kV`, `1 MV/m`, `50 μm` titanium foil, `30 L` post-shutdown wash) and Dust-Exposure Index (`DEI`), first-principles screening model tables, ground-mode architecture & validation roadmap, market segments, and quantitative targets.
+- `about.html` — Team background, sixth form intro, and 3×2 grid of C-suite member profile cards plus a team photo placeholder.
+- `contact.html` — Direct contact cards (email, Instagram, location) and quick navigation links.
 - `404.html` — Branded not-found page.
-- `assets/css/styles.css` — Complete design system (theme variables, light/dark mode, typography, responsive grid).
-- `assets/js/main.js` — Navigation overlay, theme toggle with persistence, scroll animations, and form logic.
+- `assets/css/styles.css` — Complete design system (theme variables, WCAG AA contrast in light/dark mode, typography, data tables, responsive grid).
+- `assets/js/main.js` — Navigation overlay, theme toggle with persistence, and scroll reveal animations.
 - `assets/js/hero.js` — Drifting dust background for the home page hero.
 - `assets/img/` — Brand vectors (`logo.svg`, `logo-mark.svg`, `favicon.svg`).
 

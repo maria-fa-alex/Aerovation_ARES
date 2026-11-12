@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Aerovation | ARES: Less contamination - more elevation</title>
   <meta name="description"
-    content="Aerovation is a team of sixth form students building ARES, an inlet system that charges fine desert dust and steers it away from aircraft engines. Conrad Challenge, Aviation and Aerospace.">
+    content="Aerovation is a team of sixth form students building ARES, a ground-mode electrostatic core-inlet cassette and dust-exposure monitor that protects airliner turbofans from fine desert dust. Conrad Challenge, Aviation and Aerospace.">
   <meta name="theme-color" content="#f7f5f2" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0a0b0d" media="(prefers-color-scheme: dark)">
   <meta property="og:title" content="Aerovation | ARES">
@@ -20,7 +20,7 @@
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Rajdhani:wght@500;600;700&display=swap">
   <script>(function () { var d = document.documentElement; d.classList.add("js"); try { var t = localStorage.getItem("theme"); if (t) d.setAttribute("data-theme", t); } catch (e) { } })();</script>
-  <link rel="stylesheet" href="assets/css/styles.css?v=5">
+  <link rel="stylesheet" href="assets/css/styles.css?v=12">
 </head>
 
 <body>
@@ -33,8 +33,14 @@
         <img src="assets/img/logo-mark.svg" alt="" width="36" height="36">
         <span>Aerovation</span>
       </a>
+      <nav class="header-nav" aria-label="Primary">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="ares.html">ARES</a>
+        <a href="about.html">About us</a>
+        <a href="contact.html">Contact</a>
+      </nav>
       <div class="header-actions">
-        <button class="icon-btn theme-toggle" id="theme-toggle" type="button" aria-label="Switch colour theme">
+        <button class="icon-btn theme-toggle" id="theme-toggle" type="button" aria-label="Switch colour theme" title="Switch colour theme" data-tooltip="Switch colour theme">
           <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
@@ -88,10 +94,8 @@
       <canvas id="hero-canvas" aria-hidden="true"></canvas>
       <div class="container hero-content">
         <p class="eyebrow reveal">Aerovation presents ARES</p>
-        <h1 id="hero-title" class="reveal" style="--d:1">Less contamination - <span class="text-grad">more
-            elevation.</span></h1>
-        <p class="lead reveal" style="--d:2">ARES is a sensor-controlled inlet system that charges fine desert dust and
-          steers it away from the engine core before it can do damage.</p>
+        <h1 id="hero-title" class="reveal" style="--d:1"><span class="hero-line">Less contamination —</span> <span class="text-grad">more elevation.</span></h1>
+        <p class="lead reveal" style="--d:2">ARES is a ground-mode electrostatic dust-capture cassette in the turbofan core inlet, paired with a dust-exposure monitor and post-landing wash to cut fine-dust ingestion during taxi and idle.</p>
         <div class="btn-row reveal" style="--d:3">
           <a href="ares.html" class="btn btn--primary" id="hero-cta-ares">Discover ARES
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -115,21 +119,21 @@
         <div class="section-head reveal">
           <p class="eyebrow">The problem</p>
           <h2 id="problem-title">Desert dust is wearing engines down</h2>
-          <p>During take-off and landing, aircraft engines ingest fine dust that erodes components, blocks cooling
-            passages and cuts efficiency. The finest particles are the hardest to stop.</p>
+          <p>During ground operations, aircraft engines ingest fine desert dust that erodes components, blocks cooling
+            passages and cuts efficiency. At taxi and idle, the fan's own swirl separates almost nothing below 5μm.</p>
         </div>
         <div class="grid grid--3">
           <div class="card stat reveal">
-            <span class="stat-value text-grad">0-20μm</span>
-            <p class="stat-label">The fine particle range that conventional separators struggle to catch.</p>
+            <span class="stat-value text-grad">0–20<span class="stat-unit">μm</span></span>
+            <p class="stat-label">Fine particles follow the airflow streamlines; a 1μm grain is ~100× harder to centrifuge out than a 10μm grain.</p>
           </div>
           <div class="card stat reveal" style="--d:1">
-            <span class="stat-value">Take-off <span class="text-grad">&amp;</span> landing</span>
-            <p class="stat-label">The flight phases where dust is pulled into the engine.</p>
+            <span class="stat-value text-grad">~77% at idle</span>
+            <p class="stat-label">On a dusty day, taxi and idle put ~9.8g of dust per flight into each engine core versus ~3.1g during take-off and landing roll.</p>
           </div>
           <div class="card stat reveal" style="--d:2">
-            <span class="stat-value">Rising <span class="text-grad">costs</span></span>
-            <p class="stat-label">Faster engine wear means more maintenance and higher operating costs.</p>
+            <span class="stat-value text-grad">−69% core dust</span>
+            <p class="stat-label">Predicted core-dust reduction per flight in our nominal screening model (from 12.8g down to 3.9g per engine).</p>
           </div>
         </div>
       </div>
@@ -140,8 +144,8 @@
       <div class="container">
         <div class="section-head reveal">
           <p class="eyebrow">How ARES works</p>
-          <h2 id="how-title">Charge. Deflect. Collect. Monitor.</h2>
-          <p>Four steps that keep fine dust out of the engine core and give maintenance teams the data to act on.</p>
+          <h2 id="how-title">Charge. Capture. Stow &amp; Wash. Monitor.</h2>
+          <p>By treating the core stream at taxi and idle inside a 5mm-pitch micro-gap cassette, ARES shrinks the collection distance to 2.5mm so electrostatic forces win.</p>
         </div>
         <ol class="grid grid--4 steps">
           <li class="step">
@@ -151,7 +155,7 @@
                 <path d="M13 2 4 14h7l-1 8 9-12h-7z" />
               </svg></span>
             <h3>Charge</h3>
-            <p>Sensors detect dust at the intake and an electric field charges the incoming particles.</p>
+            <p>During taxi and idle, 25μm corona wires at 2.5kV charge dust entering the 36 concentric channels of the core inlet.</p>
           </li>
           <li class="step">
             <span class="step-num">02</span>
@@ -159,8 +163,8 @@
                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                 <path d="M3 12h7c4 0 5-6 11-6M3 12h7c4 0 5 6 11 6" />
               </svg></span>
-            <h3>Deflect</h3>
-            <p>Charged particles are steered away from the engine core.</p>
+            <h3>Capture</h3>
+            <p>A 1MV/m field across each 5mm channel drives charged grains just 2.5mm onto grounded 50μm titanium collector foils.</p>
           </li>
           <li class="step">
             <span class="step-num">03</span>
@@ -169,8 +173,8 @@
                 <path d="M4 7h16l-1.5 12.5a2 2 0 0 1-2 1.5h-9a2 2 0 0 1-2-1.5z" />
                 <path d="M9 4h6M9 11v6M15 11v6" />
               </svg></span>
-            <h3>Collect</h3>
-            <p>Dust is held in washable catch zones that are cleaned automatically after landing.</p>
+            <h3>Stow &amp; wash</h3>
+            <p>The cassette stows out of the core stream before take-off power to avoid high-speed pressure loss, then washes after shutdown.</p>
           </li>
           <li class="step">
             <span class="step-num">04</span>
@@ -180,7 +184,7 @@
                 <path d="m7 15 4-4 3 3 5-6" />
               </svg></span>
             <h3>Monitor</h3>
-            <p>A dust-exposure monitor logs contamination so teams can target inspections and cleaning.</p>
+            <p>An optical inlet probe and fan-speed logs compute a Dust Exposure Index (DEI) each flight to guide borescope checks and washes.</p>
           </li>
         </ol>
         <p class="reveal" style="margin-top:3rem"><a href="ares.html" class="link-arrow">Read more about ARES
@@ -200,12 +204,22 @@
         <div class="grid grid--3">
           <a href="ares.html" class="card card--hover feature-card reveal" id="highlight-ares">
             <div class="feature-visual">
-              <img src="assets/img/logo.svg" alt="" width="200" height="200" loading="lazy">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="9.5" />
+                <circle cx="12" cy="12" r="2.2" />
+                <path d="M12 9.8C12 6.8 14.2 4.3 15.8 3.3" />
+                <path d="M13.9 10.9C16.5 9.4 19.8 10.1 21.4 11.1" />
+                <path d="M13.9 13.1C16.5 14.6 17.5 17.8 17.4 19.7" />
+                <path d="M12 14.2C12 17.2 9.8 19.7 8.2 20.7" />
+                <path d="M10.1 13.1C7.5 14.6 4.2 13.9 2.6 12.9" />
+                <path d="M10.1 10.9C7.5 9.4 6.5 6.2 6.6 4.3" />
+              </svg>
             </div>
             <div class="feature-body">
               <p class="eyebrow">The product</p>
               <h3>ARES</h3>
-              <p>How our inlet system charges, deflects and collects fine dust, and why that matters.</p>
+              <p>How our core-inlet micro-gap cassette, stow mechanism and dust-exposure monitor work together.</p>
               <span class="link-arrow">Discover <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
                   stroke-width="2" aria-hidden="true">
                   <path d="M5 12h14M13 6l6 6-6 6" />
@@ -214,13 +228,12 @@
           </a>
           <a href="about.html" class="card card--hover feature-card reveal" style="--d:1" id="highlight-about">
             <div class="feature-visual">
-              <svg viewBox="0 0 120 80" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-                <circle cx="60" cy="26" r="12" />
-                <path d="M38 70c0-13 10-22 22-22s22 9 22 22" />
-                <circle cx="24" cy="34" r="9" />
-                <path d="M8 72c0-10 7-17 16-17 4 0 7 1 10 3" />
-                <circle cx="96" cy="34" r="9" />
-                <path d="M112 72c0-10-7-17-16-17-4 0-7 1-10 3" />
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <circle cx="9" cy="7" r="3.5" />
+                <path d="M2.5 20c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5" />
+                <circle cx="17" cy="8.5" r="2.8" />
+                <path d="M17.5 14c2.4.3 4 2.3 4 5.5" />
               </svg>
             </div>
             <div class="feature-body">
@@ -235,10 +248,10 @@
           </a>
           <a href="contact.html" class="card card--hover feature-card reveal" style="--d:2" id="highlight-contact">
             <div class="feature-visual">
-              <svg viewBox="0 0 120 80" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"
-                aria-hidden="true">
-                <rect x="20" y="12" width="80" height="56" rx="8" />
-                <path d="m22 16 38 28 38-28" />
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <rect x="2.5" y="4.5" width="19" height="15" rx="2.5" />
+                <path d="m3.5 6.5 8.5 6.5 8.5-6.5" />
               </svg>
             </div>
             <div class="feature-body">
@@ -340,6 +353,7 @@
       <div>
         <p class="footer-title">Follow</p>
         <ul class="footer-links">
+          <li><a href="mailto:aerovation@oxf.gdst.net">aerovation@oxf.gdst.net</a></li>
           <li><span class="soon">Instagram coming soon</span></li>
           <li><a href="https://conrad.spacecenter.org/" target="_blank" rel="noopener">Conrad Challenge</a></li>
         </ul>
@@ -351,8 +365,8 @@
     </div>
   </footer>
 
-  <script src="assets/js/main.js?v=5" defer></script>
-  <script src="assets/js/hero.js?v=5" defer></script>
+  <script src="assets/js/main.js?v=11" defer></script>
+  <script src="assets/js/hero.js?v=11" defer></script>
 </body>
 
 </html>

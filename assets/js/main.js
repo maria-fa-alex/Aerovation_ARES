@@ -19,7 +19,10 @@
   function updateThemeLabel() {
     if (!themeBtn) return;
     var next = effectiveTheme() === "dark" ? "light" : "dark";
-    themeBtn.setAttribute("aria-label", "Switch to " + next + " mode");
+    var label = "Switch to " + next + " mode";
+    themeBtn.setAttribute("aria-label", label);
+    themeBtn.setAttribute("title", label);
+    themeBtn.setAttribute("data-tooltip", label);
   }
 
   function announceTheme() {
@@ -110,6 +113,14 @@
 
   /* ---------- Scroll reveal ---------- */
   var revealEls = document.querySelectorAll(".reveal, .step");
+  var vh = window.innerHeight || document.documentElement.clientHeight;
+  revealEls.forEach(function (el) {
+    var rect = el.getBoundingClientRect();
+    if (rect.top < vh * 0.95) {
+      el.classList.add("is-in");
+    }
+  });
+  root.classList.add("reveal-ready");
   if ("IntersectionObserver" in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
@@ -118,8 +129,10 @@
           io.unobserve(entry.target);
         }
       });
-    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.12 });
-    revealEls.forEach(function (el) { io.observe(el); });
+    }, { rootMargin: "0px 0px -6% 0px", threshold: 0.08 });
+    revealEls.forEach(function (el) {
+      if (!el.classList.contains("is-in")) io.observe(el);
+    });
   } else {
     revealEls.forEach(function (el) { el.classList.add("is-in"); });
   }
@@ -134,22 +147,4 @@
     var a = e.target.closest('a[aria-disabled="true"]');
     if (a) e.preventDefault();
   });
-
-  /* ---------- Contact form ----------
-     While data-live="false" the form only shows a notice.
-     To go live: add action="https://formspree.io/f/YOUR_ID" method="POST"
-     to the <form> and set data-live="true". */
-  var form = document.getElementById("contact-form");
-  if (form) {
-    var notice = document.getElementById("form-notice");
-    form.addEventListener("submit", function (e) {
-      if (form.dataset.live === "true" && form.getAttribute("action")) return;
-      e.preventDefault();
-      if (notice) {
-        notice.hidden = false;
-        notice.scrollIntoView({ behavior: "smooth", block: "nearest" });
-      }
-      form.reset();
-    });
-  }
 })();
