@@ -13,80 +13,84 @@
   <meta property="og:description"
     content="Less contamination - more elevation. Protecting aircraft engines from fine desert dust.">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="assets/img/logo.svg">
+  <meta property="og:url" content="https://aerovation.uk/">
+  <meta property="og:site_name" content="Aerovation">
+  <meta property="og:image" content="https://aerovation.uk/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Aerovation presents ARES: Less contamination - more elevation.">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://aerovation.uk/">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Aerovation",
+    "url": "https://aerovation.uk/",
+    "logo": "https://aerovation.uk/assets/img/apple-touch-icon.png",
+    "email": "aerovation@oxf.gdst.net",
+    "slogan": "Less contamination - more elevation.",
+    "description": "A team of sixth form students in Oxford building ARES, a ground-mode electrostatic system that captures fine desert dust before it reaches airliner engine cores, for the Conrad Challenge.",
+    "address": { "@type": "PostalAddress", "addressLocality": "Oxford", "addressCountry": "GB" }
+  }
+  </script>
+  <!-- @include head -->
+  <meta name="color-scheme" content="light dark">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Rajdhani:wght@500;600;700&display=swap">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preload" href="assets/fonts/rajdhani-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/manrope-var.woff2" as="font" type="font/woff2" crossorigin>
   <script>(function () { var d = document.documentElement; d.classList.add("js"); try { var t = localStorage.getItem("theme"); if (t) d.setAttribute("data-theme", t); } catch (e) { } })();</script>
-  <link rel="stylesheet" href="assets/css/styles.css?v=12">
+  <link rel="stylesheet" href="assets/css/styles.css?v=e89ee2a7">
+  <!-- @end head -->
 </head>
 
 <body>
+  <!-- @include header -->
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- ===== Header (same on every page) ===== -->
   <header class="site-header" id="site-header">
     <div class="container header-inner">
       <a href="index.html" class="brand" aria-label="Aerovation home">
-        <img src="assets/img/logo-mark.svg" alt="" width="36" height="36">
+        <svg class="brand-mark" viewBox="0 0 100 100" width="36" height="36" aria-hidden="true" focusable="false"><path d="M27.89 25.57 A38 38 0 1 1 27.89 74.43" fill="none" stroke="currentColor" stroke-width="6.5" stroke-linecap="round"/><path d="M35.93 32.32 A27.5 27.5 0 1 1 35.93 67.68" fill="none" stroke="currentColor" stroke-width="5.5" stroke-linecap="round"/><path d="M43.98 39.07 A17 17 0 1 1 43.98 60.93" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/><circle cx="57" cy="50" r="6" fill="currentColor"/><line x1="4" y1="41" x2="24" y2="41" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" opacity=".55"/><line x1="9" y1="50" x2="31" y2="50" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" opacity=".55"/><line x1="4" y1="59" x2="24" y2="59" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" opacity=".55"/><circle cx="77.14" cy="17.77" r="4.6" fill="#22C3DB" style="stroke:var(--fill, var(--bg))" stroke-width="1.8"/><circle cx="73.93" cy="71.67" r="4.6" fill="#22C3DB" style="stroke:var(--fill, var(--bg))" stroke-width="1.8"/><circle cx="72.97" cy="44.19" r="4.6" fill="#22C3DB" style="stroke:var(--fill, var(--bg))" stroke-width="1.8"/></svg>
         <span>Aerovation</span>
       </a>
       <nav class="header-nav" aria-label="Primary">
         <a href="index.html" aria-current="page">Home</a>
         <a href="ares.html">ARES</a>
         <a href="about.html">About us</a>
-        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="nav-cta">Contact</a>
       </nav>
       <div class="header-actions">
         <button class="icon-btn theme-toggle" id="theme-toggle" type="button" aria-label="Switch colour theme" title="Switch colour theme" data-tooltip="Switch colour theme">
-          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
-          </svg>
-          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-            stroke-linecap="round" aria-hidden="true">
-            <circle cx="12" cy="12" r="4.2" />
-            <path
-              d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
-          </svg>
-        </button>
-        <button class="menu-btn" id="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
-          <span class="menu-label">Menu</span>
-          <span class="menu-icon" aria-hidden="true"><span></span><span></span></span>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
         </button>
       </div>
     </div>
+    <span class="scroll-progress" id="scroll-progress" aria-hidden="true"></span>
   </header>
 
-  <nav class="nav-overlay" id="site-nav" aria-label="Main">
-    <div class="container nav-inner">
-      <ul class="nav-list">
-        <li><a href="index.html" style="--i:0" aria-current="page"><span class="nav-num">01</span>Home<svg
-              viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <path d="M5 12h14M13 6l6 6-6 6" />
-            </svg></a></li>
-        <li><a href="ares.html" style="--i:1"><span class="nav-num">02</span>ARES<svg viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <path d="M5 12h14M13 6l6 6-6 6" />
-            </svg></a></li>
-        <li><a href="about.html" style="--i:2"><span class="nav-num">03</span>About us<svg viewBox="0 0 24 24"
-              fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <path d="M5 12h14M13 6l6 6-6 6" />
-            </svg></a></li>
-        <li><a href="contact.html" style="--i:3"><span class="nav-num">04</span>Contact<svg viewBox="0 0 24 24"
-              fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-              <path d="M5 12h14M13 6l6 6-6 6" />
-            </svg></a></li>
-      </ul>
-      <div class="nav-aside">
-        <img src="assets/img/logo.svg" alt="ARES logo" width="88" height="88">
-        <p class="nav-tagline">Less contamination - more elevation.</p>
-        <p class="nav-meta">Conrad Challenge · Aviation &amp; Aerospace</p>
-      </div>
-    </div>
+  <!-- Phones: app-style tab bar (hidden from 768px up, where the header links show) -->
+  <nav class="tabbar" aria-label="Primary">
+    <a href="index.html" aria-current="page">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>
+      <span>Home</span>
+    </a>
+    <a href="ares.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><circle cx="12" cy="12" r="2.2"/><path d="M12 9.8C12 6.8 14.2 4.3 15.8 3.3"/><path d="M13.9 13.1C16.5 14.6 17.5 17.8 17.4 19.7"/><path d="M10.1 13.1C7.5 14.6 4.2 13.9 2.6 12.9"/></svg>
+      <span>ARES</span>
+    </a>
+    <a href="about.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7" r="3.5"/><path d="M2.5 20c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5"/><circle cx="17" cy="8.5" r="2.8"/><path d="M17.5 14c2.4.3 4 2.3 4 5.5"/></svg>
+      <span>Team</span>
+    </a>
+    <a href="contact.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="4.5" width="19" height="15" rx="2.5"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg>
+      <span>Contact</span>
+    </a>
   </nav>
+  <!-- @end header -->
 
   <main id="main">
     <!-- ===== Hero ===== -->
@@ -94,8 +98,8 @@
       <canvas id="hero-canvas" aria-hidden="true"></canvas>
       <div class="container hero-content">
         <p class="eyebrow reveal">Aerovation presents ARES</p>
-        <h1 id="hero-title" class="reveal" style="--d:1"><span class="hero-line">Less contamination —</span> <span class="text-grad">more elevation.</span></h1>
-        <p class="lead reveal" style="--d:2">ARES is a ground-mode electrostatic dust-capture cassette in the turbofan core inlet, paired with a dust-exposure monitor and post-landing wash to cut fine-dust ingestion during taxi and idle.</p>
+        <h1 id="hero-title" class="reveal" style="--d:1"><span class="hero-line">Less contamination<span class="hero-dash"> —</span></span> <span class="text-grad">more elevation.</span></h1>
+        <p class="lead reveal" style="--d:2">A ground-mode electrostatic cassette for the turbofan core inlet. It catches the fine desert dust that the fan lets through during taxi, then stows before take-off.</p>
         <div class="btn-row reveal" style="--d:3">
           <a href="ares.html" class="btn btn--primary" id="hero-cta-ares">Discover ARES
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
@@ -113,6 +117,15 @@
       </a>
     </section>
 
+    <!-- ===== Spec ticker (model design point) ===== -->
+    <div class="ticker" aria-label="ARES design point">
+      <div class="ticker-track">
+        <ul><li><strong>36</strong>concentric channels</li><li><strong>5mm</strong>plate pitch</li><li><strong>2.5kV</strong>corona supply</li><li><strong>1MV/m</strong>collection field</li><li><strong>7.3ms</strong>residence at idle</li><li><strong>89%</strong>capture at 5μm</li><li><strong>−69%</strong>core dust per flight</li><li><strong>~2.3kW</strong>per engine</li><li><strong>~35kg</strong>per engine</li></ul>
+        <ul aria-hidden="true"><li><strong>36</strong>concentric channels</li><li><strong>5mm</strong>plate pitch</li><li><strong>2.5kV</strong>corona supply</li><li><strong>1MV/m</strong>collection field</li><li><strong>7.3ms</strong>residence at idle</li><li><strong>89%</strong>capture at 5μm</li><li><strong>−69%</strong>core dust per flight</li><li><strong>~2.3kW</strong>per engine</li><li><strong>~35kg</strong>per engine</li></ul>
+      </div>
+    </div>
+
+
     <!-- ===== Problem ===== -->
     <section class="section" id="problem" aria-labelledby="problem-title">
       <div class="container">
@@ -122,20 +135,22 @@
           <p>During ground operations, aircraft engines ingest fine desert dust that erodes components, blocks cooling
             passages and cuts efficiency. At taxi and idle, the fan's own swirl separates almost nothing below 5μm.</p>
         </div>
-        <div class="grid grid--3">
+        <p class="swipe-hint" aria-hidden="true">Swipe <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></p>
+        <div class="grid grid--3 snap-row">
           <div class="card stat reveal">
-            <span class="stat-value text-grad">0–20<span class="stat-unit">μm</span></span>
+            <span class="stat-value text-grad">0–20<span class="stat-unit">μm</span><span class="stat-suffix">the dust size that slips past the fan</span></span>
             <p class="stat-label">Fine particles follow the airflow streamlines; a 1μm grain is ~100× harder to centrifuge out than a 10μm grain.</p>
           </div>
           <div class="card stat reveal" style="--d:1">
-            <span class="stat-value text-grad">~77% at idle</span>
+            <span class="stat-value text-grad" data-count="77">~77%<span class="stat-suffix">of core dust enters during taxi &amp; idle</span></span>
             <p class="stat-label">On a dusty day, taxi and idle put ~9.8g of dust per flight into each engine core versus ~3.1g during take-off and landing roll.</p>
           </div>
           <div class="card stat reveal" style="--d:2">
-            <span class="stat-value text-grad">−69% core dust</span>
+            <span class="stat-value text-charge" data-count="69">−69%<span class="stat-suffix">core dust per flight with ARES</span></span>
             <p class="stat-label">Predicted core-dust reduction per flight in our nominal screening model (from 12.8g down to 3.9g per engine).</p>
           </div>
         </div>
+        <p class="fine-print reveal">Figures are predictions from our first-principles concept model (dusty day, 0.3mg/m³). They have not yet been validated by testing.</p>
       </div>
     </section>
 
@@ -144,8 +159,8 @@
       <div class="container">
         <div class="section-head reveal">
           <p class="eyebrow">How ARES works</p>
-          <h2 id="how-title">Charge. Capture. Stow &amp; Wash. Monitor.</h2>
-          <p>By treating the core stream at taxi and idle inside a 5mm-pitch micro-gap cassette, ARES shrinks the collection distance to 2.5mm so electrostatic forces win.</p>
+          <h2 id="how-title">Catch the dust while the aircraft is on the ground</h2>
+          <p>Most fine dust enters an engine during taxi, when air moves slowly enough for electricity to pull it out. ARES does exactly that, then gets out of the way for take-off.</p>
         </div>
         <ol class="grid grid--4 steps">
           <li class="step">
@@ -155,7 +170,7 @@
                 <path d="M13 2 4 14h7l-1 8 9-12h-7z" />
               </svg></span>
             <h3>Charge</h3>
-            <p>During taxi and idle, 25μm corona wires at 2.5kV charge dust entering the 36 concentric channels of the core inlet.</p>
+            <p>Thin high-voltage wires give passing dust grains an electric charge.</p>
           </li>
           <li class="step">
             <span class="step-num">02</span>
@@ -164,7 +179,7 @@
                 <path d="M3 12h7c4 0 5-6 11-6M3 12h7c4 0 5 6 11 6" />
               </svg></span>
             <h3>Capture</h3>
-            <p>A 1MV/m field across each 5mm channel drives charged grains just 2.5mm onto grounded 50μm titanium collector foils.</p>
+            <p>Charged grains are pulled 2.5mm onto metal plates, before they reach the engine core.</p>
           </li>
           <li class="step">
             <span class="step-num">03</span>
@@ -174,7 +189,7 @@
                 <path d="M9 4h6M9 11v6M15 11v6" />
               </svg></span>
             <h3>Stow &amp; wash</h3>
-            <p>The cassette stows out of the core stream before take-off power to avoid high-speed pressure loss, then washes after shutdown.</p>
+            <p>The unit folds away before take-off and is rinsed clean after landing.</p>
           </li>
           <li class="step">
             <span class="step-num">04</span>
@@ -184,145 +199,54 @@
                 <path d="m7 15 4-4 3 3 5-6" />
               </svg></span>
             <h3>Monitor</h3>
-            <p>An optical inlet probe and fan-speed logs compute a Dust Exposure Index (DEI) each flight to guide borescope checks and washes.</p>
+            <p>A dust sensor records each engine's exposure, so airlines inspect and wash engines when they really need it.</p>
           </li>
         </ol>
-        <p class="reveal" style="margin-top:3rem"><a href="ares.html" class="link-arrow">Read more about ARES
+        <p class="reveal" style="margin-top:3rem"><a href="ares.html#how" class="link-arrow">See how it works in detail
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
               <path d="M5 12h14M13 6l6 6-6 6" />
             </svg></a></p>
       </div>
     </section>
 
-    <!-- ===== Page highlights ===== -->
-    <section class="section" aria-labelledby="explore-title">
+    <!-- ===== Project status =====
+      INSTAGRAM: when the account is live, add a "Follow along" section here with the
+      embed code from Behold (behold.so) or LightWidget (lightwidget.com). -->
+    <section class="section" aria-labelledby="status-title">
       <div class="container">
         <div class="section-head reveal">
-          <p class="eyebrow">Explore</p>
-          <h2 id="explore-title">Find out more</h2>
+          <p class="eyebrow">Where we are</p>
+          <h2 id="status-title">Concept proven on paper. Next: the wind tunnel.</h2>
+          <p>Our first-principles model shows ARES can work at taxi and idle. We are now refining it with simulation, then building a single test channel.</p>
         </div>
-        <div class="grid grid--3">
-          <a href="ares.html" class="card card--hover feature-card reveal" id="highlight-ares">
-            <div class="feature-visual">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <circle cx="12" cy="12" r="9.5" />
-                <circle cx="12" cy="12" r="2.2" />
-                <path d="M12 9.8C12 6.8 14.2 4.3 15.8 3.3" />
-                <path d="M13.9 10.9C16.5 9.4 19.8 10.1 21.4 11.1" />
-                <path d="M13.9 13.1C16.5 14.6 17.5 17.8 17.4 19.7" />
-                <path d="M12 14.2C12 17.2 9.8 19.7 8.2 20.7" />
-                <path d="M10.1 13.1C7.5 14.6 4.2 13.9 2.6 12.9" />
-                <path d="M10.1 10.9C7.5 9.4 6.5 6.2 6.6 4.3" />
-              </svg>
-            </div>
-            <div class="feature-body">
-              <p class="eyebrow">The product</p>
-              <h3>ARES</h3>
-              <p>How our core-inlet micro-gap cassette, stow mechanism and dust-exposure monitor work together.</p>
-              <span class="link-arrow">Discover <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  stroke-width="2" aria-hidden="true">
-                  <path d="M5 12h14M13 6l6 6-6 6" />
-                </svg></span>
-            </div>
-          </a>
-          <a href="about.html" class="card card--hover feature-card reveal" style="--d:1" id="highlight-about">
-            <div class="feature-visual">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <circle cx="9" cy="7" r="3.5" />
-                <path d="M2.5 20c0-3.6 2.9-6.5 6.5-6.5s6.5 2.9 6.5 6.5" />
-                <circle cx="17" cy="8.5" r="2.8" />
-                <path d="M17.5 14c2.4.3 4 2.3 4 5.5" />
-              </svg>
-            </div>
-            <div class="feature-body">
-              <p class="eyebrow">About us</p>
-              <h3>The team</h3>
-              <p>Five sixth formers whose different interests come together as Aerovation.</p>
-              <span class="link-arrow">Meet us <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  stroke-width="2" aria-hidden="true">
-                  <path d="M5 12h14M13 6l6 6-6 6" />
-                </svg></span>
-            </div>
-          </a>
-          <a href="contact.html" class="card card--hover feature-card reveal" style="--d:2" id="highlight-contact">
-            <div class="feature-visual">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                stroke-linejoin="round" aria-hidden="true">
-                <rect x="2.5" y="4.5" width="19" height="15" rx="2.5" />
-                <path d="m3.5 6.5 8.5 6.5 8.5-6.5" />
-              </svg>
-            </div>
-            <div class="feature-body">
-              <p class="eyebrow">Contact</p>
-              <h3>Get in touch</h3>
-              <p>Partnerships, questions or feedback. We would love to hear from you.</p>
-              <span class="link-arrow">Contact us <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  stroke-width="2" aria-hidden="true">
-                  <path d="M5 12h14M13 6l6 6-6 6" />
-                </svg></span>
-            </div>
-          </a>
-        </div>
+        <p class="milestone reveal"><span class="milestone-tag">Latest</span><time datetime="2026-11-09">9 November 2026</time><span>Concept design v1 complete: first-principles physics and sizing model.</span></p>
+        <ol class="roadmap reveal">
+          <li class="is-now"><span class="stage">Stage 0</span><h3>Simulate</h3><p>Particle-tracking <span class="term" tabindex="0">CFD<span class="term-def" role="tooltip"><span class="visually-hidden"> (</span>Computational fluid dynamics: computer simulation of how air, and the dust in it, flows.<span class="visually-hidden">)</span></span></span> and electrostatic modelling of one cell.</p></li>
+          <li><span class="stage">Stage 1</span><h3>Bench cell</h3><p>One 5mm channel in a 55m/s dust wind tunnel.</p></li>
+          <li><span class="stage">Stage 2</span><h3>Annular sector</h3><p>1/12 of the ring, with stow actuator and wash.</p></li>
+          <li><span class="stage">Stage 3</span><h3>Full-scale ring</h3><p>Engine test cell at idle, with a manufacturer.</p></li>
+          <li><span class="stage">Stage 4</span><h3>In service</h3><p>Airline trial, starting with the dust monitor.</p></li>
+        </ol>
+        <p class="reveal" style="margin-top:2.2rem"><a href="ares.html#roadmap" class="link-arrow">See the full validation path
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6" />
+            </svg></a></p>
       </div>
     </section>
 
-    <!-- ===== Instagram ===== -->
-    <section class="section section--alt" aria-labelledby="ig-title">
+    <!-- ===== Closing call to action ===== -->
+    <section class="section section--alt" aria-labelledby="home-cta-title">
       <div class="container">
-        <div class="section-head reveal">
-          <p class="eyebrow">Follow along</p>
-          <h2 id="ig-title">From the workshop</h2>
-          <p>Updates from our research, testing and Conrad Challenge journey.</p>
-        </div>
-        <!--
-          INSTAGRAM FEED
-          When the account is ready, replace the placeholder tiles inside
-          #instagram-feed with the embed code from Behold (behold.so) or
-          LightWidget (lightwidget.com), and update the link in .ig-foot.
-        -->
-        <div id="instagram-feed" class="ig-grid reveal">
-          <div class="ig-tile" style="--i:0"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="1.6" aria-hidden="true">
-              <rect x="3" y="3" width="18" height="18" rx="5" />
-              <circle cx="12" cy="12" r="4" />
-              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
-            </svg></div>
-          <div class="ig-tile" style="--i:1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="1.6" aria-hidden="true">
-              <rect x="3" y="3" width="18" height="18" rx="5" />
-              <circle cx="12" cy="12" r="4" />
-              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
-            </svg></div>
-          <div class="ig-tile" style="--i:2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="1.6" aria-hidden="true">
-              <rect x="3" y="3" width="18" height="18" rx="5" />
-              <circle cx="12" cy="12" r="4" />
-              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
-            </svg></div>
-          <div class="ig-tile" style="--i:3"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="1.6" aria-hidden="true">
-              <rect x="3" y="3" width="18" height="18" rx="5" />
-              <circle cx="12" cy="12" r="4" />
-              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
-            </svg></div>
-          <div class="ig-tile" style="--i:4"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="1.6" aria-hidden="true">
-              <rect x="3" y="3" width="18" height="18" rx="5" />
-              <circle cx="12" cy="12" r="4" />
-              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
-            </svg></div>
-          <div class="ig-tile" style="--i:5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="1.6" aria-hidden="true">
-              <rect x="3" y="3" width="18" height="18" rx="5" />
-              <circle cx="12" cy="12" r="4" />
-              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
-            </svg></div>
-        </div>
-        <div class="ig-foot reveal">
-          <p>Our Instagram is coming soon.</p>
-          <a href="#" class="btn" id="instagram-follow" aria-disabled="true">Follow us on Instagram</a>
+        <div class="cta-band reveal">
+          <p class="eyebrow">Work with us</p>
+          <h2 id="home-cta-title">Help us take ARES from model to wind tunnel</h2>
+          <p>We are looking for engine manufacturers, MRO providers, universities and test facilities to help us build and validate the first bench cell.</p>
+          <div class="btn-row">
+            <a href="contact.html" class="btn btn--primary" id="home-cta-contact">Partner with us
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="ares.html#technical" class="btn" id="home-cta-tech">Read the technicalities</a>
+          </div>
         </div>
       </div>
     </section>
@@ -331,12 +255,12 @@
         rel="noopener">Conrad Challenge</a> · Aviation &amp; Aerospace</p>
   </main>
 
-  <!-- ===== Footer (same on every page) ===== -->
+  <!-- @include footer -->
   <footer class="site-footer">
     <div class="container footer-grid">
       <div class="footer-brand">
         <a href="index.html" class="brand" aria-label="Aerovation home">
-          <img src="assets/img/logo-mark.svg" alt="" width="36" height="36">
+          <svg class="brand-mark" viewBox="0 0 100 100" width="36" height="36" aria-hidden="true" focusable="false"><path d="M27.89 25.57 A38 38 0 1 1 27.89 74.43" fill="none" stroke="currentColor" stroke-width="6.5" stroke-linecap="round"/><path d="M35.93 32.32 A27.5 27.5 0 1 1 35.93 67.68" fill="none" stroke="currentColor" stroke-width="5.5" stroke-linecap="round"/><path d="M43.98 39.07 A17 17 0 1 1 43.98 60.93" fill="none" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/><circle cx="57" cy="50" r="6" fill="currentColor"/><line x1="4" y1="41" x2="24" y2="41" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" opacity=".55"/><line x1="9" y1="50" x2="31" y2="50" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" opacity=".55"/><line x1="4" y1="59" x2="24" y2="59" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" opacity=".55"/><circle cx="77.14" cy="17.77" r="4.6" fill="#22C3DB" style="stroke:var(--fill, var(--bg))" stroke-width="1.8"/><circle cx="73.93" cy="71.67" r="4.6" fill="#22C3DB" style="stroke:var(--fill, var(--bg))" stroke-width="1.8"/><circle cx="72.97" cy="44.19" r="4.6" fill="#22C3DB" style="stroke:var(--fill, var(--bg))" stroke-width="1.8"/></svg>
           <span>Aerovation</span>
         </a>
         <p>Less contamination - more elevation.</p>
@@ -361,12 +285,13 @@
     </div>
     <div class="container footer-bottom">
       <p>© 2026 Aerovation. All rights reserved.</p>
-      <p>ARES · Aerospace Residue Elimination Service</p>
+      <p>ARES concept design v1 · Site updated November 2026</p>
     </div>
   </footer>
+  <!-- @end footer -->
 
-  <script src="assets/js/main.js?v=11" defer></script>
-  <script src="assets/js/hero.js?v=11" defer></script>
+  <script src="assets/js/main.js?v=713dcf2a" defer></script>
+  <script src="assets/js/hero.js?v=d991bf7c" defer></script>
 </body>
 
 </html>
