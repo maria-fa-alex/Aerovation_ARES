@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="ARES"><path d="M27.89 25.57 A38 38 0 1 1 27.89 74.43" fill="none" stroke="#111418" stroke-width="6.5" stroke-linecap="round"/>
+<path d="M35.93 32.32 A27.5 27.5 0 1 1 35.93 67.68" fill="none" stroke="#111418" stroke-width="5.5" stroke-linecap="round"/>
+<path d="M43.98 39.07 A17 17 0 1 1 43.98 60.93" fill="none" stroke="#111418" stroke-width="4.5" stroke-linecap="round"/>
+<circle cx="57" cy="50" r="6" fill="#111418"/>
+<line x1="4" y1="41" x2="24" y2="41" stroke="#111418" stroke-width="3.6" stroke-linecap="round" opacity=".55"/>
+<line x1="9" y1="50" x2="31" y2="50" stroke="#111418" stroke-width="3.6" stroke-linecap="round" opacity=".55"/>
+<line x1="4" y1="59" x2="24" y2="59" stroke="#111418" stroke-width="3.6" stroke-linecap="round" opacity=".55"/>
+<circle cx="77.14" cy="17.77" r="4.6" fill="#111418" stroke="#FFFFFF" stroke-width="1.8"/>
+<circle cx="73.93" cy="71.67" r="4.6" fill="#111418" stroke="#FFFFFF" stroke-width="1.8"/>
+<circle cx="72.97" cy="44.19" r="4.6" fill="#111418" stroke="#FFFFFF" stroke-width="1.8"/></svg>

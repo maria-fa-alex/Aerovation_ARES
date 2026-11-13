@@ -1,0 +1,6 @@
+Manrope (c) The Manrope Project Authors, and Rajdhani (c) Indian Type Foundry.
+Both are licensed under the SIL Open Font License, Version 1.1:
+https://openfontlicense.org
+
+Files are the latin subsets served by Google Fonts, self-hosted here so the
+site makes no third-party requests.
